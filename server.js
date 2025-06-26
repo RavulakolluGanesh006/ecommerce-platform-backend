@@ -12,6 +12,12 @@ app.use(express.json());
 const authRoutes = require("./routes/authRoutes");
 app.use("/api/auth", authRoutes);
 
+
+//routes for product adding
+const productRoutes = require("./routes/productRoutes");
+app.use("/api", productRoutes); 
+
+
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     app.listen(process.env.PORT || 5000, () => {
