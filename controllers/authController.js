@@ -26,13 +26,23 @@ exports.login = async (req, res) => {
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(401).json({ message: "Invalid credentials" });
-
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
-    res.json({ token, user: { id: user._id, name: user.name, email: user.email } });
+    res.json({
+      token,
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        isAdmin: user.isAdmin
+      }
+      
+    });
+    // console.log(res.json)
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
+
 
 exports.profile = async (req, res) => {
   res.json(req.user); // Populated by middleware
