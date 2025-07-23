@@ -18,6 +18,11 @@ const productRoutes = require("./routes/productRoutes");
 app.use("/api", productRoutes); 
 
 
+
+app.use("/api/cart", require("./routes/cartRoutes"));
+
+
+
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     app.listen(process.env.PORT || 5000, () => {
