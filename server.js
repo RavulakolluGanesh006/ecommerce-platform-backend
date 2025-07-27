@@ -21,7 +21,11 @@ app.use("/api", productRoutes);
 
 app.use("/api/cart", require("./routes/cartRoutes"));
 
+const orderRoutes = require("./routes/orderRoutes");
+app.use("/api/orders", orderRoutes);
 
+// const paymentRoutes = require("./routes/paymentRoutes");
+// app.use("/api/payment", paymentRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {

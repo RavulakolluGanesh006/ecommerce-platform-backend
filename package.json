@@ -14,10 +14,13 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.0",
+    "nodemailer": "^7.0.5",
     "nodemon": "^3.1.10",
+    "razorpay": "^2.9.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-scripts": "5.0.1",
+    "resend": "^4.7.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
