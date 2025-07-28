@@ -9,7 +9,7 @@ const sendEmail = async (body) => {
       throw {
         statusCode: 400,
         body: {
-          message: "Missing required email fields (to, subject, message)",
+          message: "Missing required email fields i (to, subject, message)",
           error: { code: "ValidationException" }
         }
       };
